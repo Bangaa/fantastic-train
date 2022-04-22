@@ -37,6 +37,15 @@ public class IanMejias {
         return Integer.parseInt(s[1]);
     }
 
+    public static boolean quedanEntradas(int[] stock, int[] ventas) {
+        for (int i = 0; i < stock.length; i++) {
+            if (ventas[i] < stock[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         String[] precioE = {"PV1 $8000", "PV2 $12000", "PV3 $15000",
             "VG $20000", "PVVIP $25000", "VGVIP $35000"
@@ -49,7 +58,7 @@ public class IanMejias {
         Scanner scn = new Scanner(System.in);
         boolean continuar = true;
 
-        while (continuar) {
+        while (continuar && quedanEntradas(stockE, ventasE)) {
             // pedir los datos por teclado
             System.out.print("\nIngrese sus datos: ");
             String data = scn.nextLine();
@@ -89,6 +98,10 @@ public class IanMejias {
             String ans = scn.nextLine().toLowerCase();
 
             continuar = ans.equals("s") ? true:false;
+        }
+
+        if (!quedanEntradas(stockE, ventasE)) {
+            System.out.println("\n========= NO QUEDAN MAS ENTRADAS. ========= ");
         }
 
         System.out.println("========= RESUMEN DEL DIA ==========");
