@@ -83,15 +83,15 @@ public class IanMejias {
             // desplegar los detalles de la transaccion
 
             System.out.println(String.format(
-                        "\nNombre: %s\n" +
-                        "RUT: %s\n" +
-                        "Telefono: %s\n" +
-                        "Monto a cancelar: %d\n" +
-                        "Se enviara comprobante al e-mail: %s",
+                    "\nNombre: %s\n" +
+                    "RUT: %s\n" +
+                    "Telefono: %s\n" +
+                    "Monto a cancelar: %d\n" +
+                    "Se enviara comprobante al e-mail: %s",
 
-                        persona[1], persona[2], persona[3], precio, persona[0]
-                        )
-                    );
+                    persona[1], persona[2], persona[3], precio, persona[0]
+                    )
+                );
 
             ventasE[index] += 1;
 
